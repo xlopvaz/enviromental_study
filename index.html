@@ -46,7 +46,12 @@
 
     <section id="elementos">
       <h2 data-i18n="elementos.titulo">Elementos analizados</h2>
-      <p data-i18n="elementos.texto">Aquí irá a táboa periódica interactiva.</p>
+      <p data-i18n="elementos.texto">Determináronse 23 elementos mediante ICP-MS-TOF. Fai clic en calquera elemento resaltado para ver os resultados.</p>
+      <div class="periodic-table" id="periodic-table"></div>
+<div class="periodic-legend" id="periodic-legend"></div>
+<div class="element-detail" id="element-detail">
+  <p class="element-detail-empty" data-i18n="elementos.hint">Selecciona un elemento para ver a información.</p>
+</div>
     </section>
 
     <section id="resultados">
@@ -71,6 +76,9 @@
   </footer>
 
   <script src="data/translations.js"></script>
+  <script src="data/periodic-positions.js"></script>
+  <script src="data/measured-elements.js"></script>
+  <script src="js/periodic-table.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

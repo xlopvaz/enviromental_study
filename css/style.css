@@ -115,3 +115,162 @@ footer {
   background-color: white;
   color: var(--color-primario);
 }
+/* ===== Tabla periódica ===== */
+.periodic-table {
+  display: grid;
+  grid-template-columns: repeat(18, minmax(0, 1fr));
+  gap: 3px;
+  margin-top: 2rem;
+  overflow-x: auto;
+}
+
+.element-cell {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background: #eae8e2;
+  color: #b5b2a8;
+  font-family: var(--fuente-texto);
+}
+
+.element-cell.active {
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.15s, box-shadow 0.2s;
+}
+
+.element-cell.active:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  z-index: 2;
+}
+
+.element-cell.selected {
+  outline: 2px solid var(--color-primario);
+  outline-offset: 1px;
+}
+
+.element-symbol {
+  font-size: 0.8rem;
+}
+
+.element-number {
+  font-size: 0.42rem;
+  opacity: 0.85;
+}
+
+/* Leyenda de categorías */
+.periodic-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  font-size: 0.75rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.legend-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+/* Ficha del elemento */
+.element-detail {
+  margin-top: 2rem;
+  padding: 0;
+  border: 1px solid var(--color-borde);
+  background: white;
+  min-height: 100px;
+  overflow: hidden;
+}
+
+.element-detail-empty {
+  padding: 2rem;
+  text-align: center;
+  color: #999;
+}
+
+.element-detail-header {
+  padding: 1.2rem 1.5rem;
+  color: white;
+}
+
+.element-detail-header h3 {
+  font-family: var(--fuente-titulos);
+  font-size: 1.6rem;
+  margin-bottom: 0.2rem;
+}
+
+.element-detail-header .element-category-lbl {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.element-detail-body {
+  padding: 1.5rem;
+}
+
+.matriz-label {
+  font-size: 0.8rem;
+  color: var(--color-secundario);
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.element-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.7rem;
+  margin: 1.2rem 0;
+}
+
+.stat-card {
+  background: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  padding: 0.6rem 0.8rem;
+}
+
+.stat-card .stat-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #999;
+  margin-bottom: 0.2rem;
+}
+
+.stat-card .stat-value {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.health-box {
+  margin-top: 1.2rem;
+  padding: 1rem 1.2rem;
+  background: #fdf6ec;
+  border-left: 3px solid #c0793b;
+}
+
+.health-box .health-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #c0793b;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.health-box p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
