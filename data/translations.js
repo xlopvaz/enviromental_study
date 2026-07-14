@@ -1,4 +1,7 @@
+let currentLang = "gl";
+
 const translations = {
+  // ... el resto que ya tenías
   gl: {
     "site.title": "Estudo Ambiental do Regato de Nogueiredo",
     "site.subtitle": "Caracterización multielemental e isotópica dun sistema fluvial afectado por arsénico (Castrelo de Miño, Ourense)",

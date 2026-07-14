@@ -1,5 +1,3 @@
-let currentLang = "gl";
-
 function setLanguage(lang) {
   currentLang = lang;
 
