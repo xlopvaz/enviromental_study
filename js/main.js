@@ -17,7 +17,7 @@ if (searchEl) searchEl.placeholder = lang === "gl" ? "Buscar un termo..." : "Sea
 if (typeof renderGlossary === "function") renderGlossary(searchEl ? searchEl.value : "");
   if (typeof mainMap !== "undefined" && mainMap) drawMainMarkers();
 if (typeof phMap !== "undefined" && phMap) drawPhMarkers();
-if (typeof lastWeatherData !== "undefined" && lastWeatherData) renderLiveCard(lastWeatherData.current, lastWeatherData.last30Sum, lastWeatherData.pctOfNormal);
+if (typeof lastWeatherData !== "undefined" && lastWeatherData) renderLiveCard(lastWeatherData.current, lastWeatherData.last30Sum, lastWeatherData.pctOfNormal, lastWeatherData.climateNormal);
 }
 
 document.getElementById("btn-gl").addEventListener("click", () => setLanguage("gl"));

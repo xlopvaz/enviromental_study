@@ -626,3 +626,9 @@ section h3 {
   color: #999;
   padding: 2rem;
 }
+.live-normal-note {
+  font-size: 0.75rem;
+  color: #999;
+  text-align: center;
+  margin: -0.5rem 0 1rem;
+}
