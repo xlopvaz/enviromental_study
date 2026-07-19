@@ -19,7 +19,65 @@ function strengthLabel(value, lang) {
   if (abs >= 0.4) return labels[lang].moderate;
   return labels[lang].weak;
 }
+const pcaQuadrantData = {
+  1: {
+    gl: {
+      title: "Cuadrante superior-esquerdo — As",
+      text: "Só o As e as mostras da cabeceira e curso medio do regato aparecen agrupadas neste cuadrante. A presenza única do As aquí confirma que é o parámetro definitorio da calidade das augas no treito alto de Nogueiredo. A forte agrupación das mostras amosa unha fonte de achega xeoxénica constante e homoxénea dende o inicio do curso fluvial."
+    },
+    en: {
+      title: "Top-left quadrant — As",
+      text: "Only As and the headwater/mid-course samples are grouped in this quadrant. The unique presence of As here confirms it is the defining parameter of water quality in the upper stretch of Nogueiredo. The strong clustering of these samples shows a constant, homogeneous geogenic source from the start of the stream course."
+    }
+  },
+  2: {
+    gl: {
+      title: "Cuadrante superior-dereito — Influencia mineira",
+      text: "Mostra a influencia mineira e litolóxica, onde se localiza de xeito illado o punto m25. A asociación deste punto co U, Pb e Rb confirma unha natureza diferente, unha \"pegada química\" característica de zonas con influencias de mineralizacións graníticas e lixiviados mineiros, diferenciándose claramente do resto das mostras."
+    },
+    en: {
+      title: "Top-right quadrant — Mining influence",
+      text: "Shows mining and lithological influence, where point m25 is isolated. Its association with U, Pb and Rb confirms a different nature, a \"chemical fingerprint\" characteristic of areas influenced by granitic mineralization and mining leachates, clearly differentiating it from the rest of the samples."
+    }
+  },
+  3: {
+    gl: {
+      title: "Cuadrante inferior-dereito — Desembocadura",
+      text: "As mostras da desembocadura do regato aparecen aquí, xunto coa presenza do Fe, Sr, Ca e Zn. A posición do Fe e Zn en oposición ao As suxire que, ao longo do regato, o Fe pode estar actuando como sumidoiro xeoquímico, retirando o As da fase disolta mediante adsorción."
+    },
+    en: {
+      title: "Bottom-right quadrant — River mouth",
+      text: "The stream mouth samples appear here, together with Fe, Sr, Ca and Zn. The position of Fe and Zn in opposition to As suggests that, along the stream, Fe may act as a geochemical sink, removing As from the dissolved phase through adsorption."
+    }
+  },
+  4: {
+    gl: {
+      title: "Cuadrante inferior-esquerdo — Fondo xeoquímico",
+      text: "Inclúe as mostras do regato coas concentracións elementais máis baixas. Este cuadrante representa os niveis de referencia ou fondo xeoquímico natural do regato, onde a carga inicial de As atópase diluída pola achega de augas superficiais."
+    },
+    en: {
+      title: "Bottom-left quadrant — Geochemical background",
+      text: "Includes the stream samples with the lowest elemental concentrations. This quadrant represents the reference levels or natural geochemical background of the stream, where the initial As load is diluted by surface water input."
+    }
+  }
+};
 
+function showPcaDetail(quadrant) {
+  document.querySelectorAll(".pca-quadrant.selected").forEach(q => q.classList.remove("selected"));
+  document.getElementById("pca-q" + quadrant).classList.add("selected");
+
+  const lang = currentLang === "gl" ? "gl" : "en";
+  const data = pcaQuadrantData[quadrant][lang];
+
+  document.getElementById("pca-detail").innerHTML = `
+    <h3>${data.title}</h3>
+    <p>${data.text}</p>
+  `;
+}
+
+document.querySelectorAll(".pca-quadrant").forEach(q => {
+  q.addEventListener("click", () => showPcaDetail(q.dataset.quadrant));
+});
 function setLanguage(lang) {
   currentLang = lang;
   document.querySelectorAll("[data-i18n]").forEach(el => {

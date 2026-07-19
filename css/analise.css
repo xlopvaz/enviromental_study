@@ -141,3 +141,75 @@
   border: 1px solid var(--color-borde);
   height: 350px;
 }
+.pca-schematic-note {
+  background: #fdf6ec;
+  border-left: 3px solid #c0793b;
+  padding: 0.7rem 1rem;
+  font-size: 0.8rem;
+  color: #8a5a24;
+  margin: 1rem 0 1.5rem;
+}
+
+.pca-diagram {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 3px;
+  aspect-ratio: 1.6;
+  max-width: 600px;
+  margin: 2rem auto 1.5rem;
+  background: var(--color-borde);
+}
+
+.pca-quadrant {
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  padding: 1rem;
+}
+
+.pca-quadrant:hover {
+  background: var(--color-fondo);
+}
+
+.pca-quadrant.selected {
+  background: var(--color-fondo);
+  box-shadow: inset 0 0 0 2px var(--color-primario);
+}
+
+.pca-q-tags {
+  font-family: var(--fuente-titulos);
+  font-size: 0.95rem;
+  color: var(--color-primario);
+  text-align: center;
+  font-weight: 600;
+}
+
+.pca-axis-label {
+  position: absolute;
+  font-size: 0.75rem;
+  color: #999;
+  font-weight: 600;
+}
+
+.pca-axis-top { top: -1.4rem; left: 50%; transform: translateX(-50%); }
+.pca-axis-bottom { bottom: -1.4rem; left: 50%; transform: translateX(-50%); }
+.pca-axis-left { left: -3.2rem; top: 50%; transform: translateY(-50%); }
+.pca-axis-right { right: -3.5rem; top: 50%; transform: translateY(-50%); }
+
+.pca-detail {
+  padding: 1.5rem;
+  background: white;
+  border: 1px solid var(--color-borde);
+  min-height: 80px;
+}
+
+.pca-detail h3 {
+  font-family: var(--fuente-titulos);
+  color: var(--color-primario);
+  margin-bottom: 0.8rem;
+}

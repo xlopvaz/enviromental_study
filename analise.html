@@ -62,6 +62,36 @@
       </div>
       <p class="map-note" data-i18n="analise.perfilSrNota">Puntos da segunda campaña de mostraxe, ordenados dende augas arriba (1) ata a desembocadura (5). As barras de erro representan a precisión interna (2SD) do MC-ICP-MS.</p>
     </section>
+<section id="pca">
+      <h2 data-i18n="analise.pcaTitulo">Análise de Compoñentes Principais (PCA)</h2>
+      <p data-i18n="analise.pcaIntro">Representación esquemática dos catro cuadrantes identificados na PCA das augas do regato (25 mostras). PC1 explica un 54,4% da variabilidade e PC2 un 18,7% (73,1% acumulado).</p>
+
+      <div class="pca-schematic-note" data-i18n="analise.pcaAviso">⚠ Esquema cualitativo baseado na interpretación da memoria — non representa coordenadas exactas dos puntos.</div>
+
+      <div class="pca-diagram">
+        <div class="pca-axis-label pca-axis-top" data-i18n="analise.pcaPC2pos">PC2 +</div>
+        <div class="pca-axis-label pca-axis-bottom" data-i18n="analise.pcaPC2neg">PC2 −</div>
+        <div class="pca-axis-label pca-axis-left" data-i18n="analise.pcaPC1neg">PC1 −</div>
+        <div class="pca-axis-label pca-axis-right" data-i18n="analise.pcaPC1pos">PC1 +</div>
+
+        <div class="pca-quadrant" id="pca-q1" data-quadrant="1">
+          <div class="pca-q-tags">As</div>
+        </div>
+        <div class="pca-quadrant" id="pca-q2" data-quadrant="2">
+          <div class="pca-q-tags">U · Pb · Rb</div>
+        </div>
+        <div class="pca-quadrant" id="pca-q4" data-quadrant="4">
+          <div class="pca-q-tags" data-i18n="analise.pcaQ4tag">Fondo xeoquímico</div>
+        </div>
+        <div class="pca-quadrant" id="pca-q3" data-quadrant="3">
+          <div class="pca-q-tags">Fe · Sr · Ca · Zn</div>
+        </div>
+      </div>
+
+      <div class="pca-detail" id="pca-detail">
+        <p class="corr-detail-empty" data-i18n="analise.pcaHint">Selecciona un cuadrante para ver a súa interpretación.</p>
+      </div>
+    </section>
   </main>
 
   <footer>
